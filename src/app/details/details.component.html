@@ -1,16 +1,42 @@
-<h1>MiniTracker</h1>
-<div>
-  <label>Username:
-    <input [(ngModel)]="PlayerRequest.Name" placeholder="Enter the Username">
-  </label>
+<div class="container">
+  <h1>MiniTracker</h1>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input id="username" type="text" class="form-control" [(ngModel)]="PlayerRequest.Name" placeholder="Enter the Username">
+  </div>
+  <!-- <div class="form-group">
+    <label for="department">Department</label>
+    <select id="department" name="department" [(ngModel)]="SelectedCommand">
+      <option [value]="command.Id" *ngFor="let command of Commands" class="form-control">
+        {{command.Display}}
+      </option>
+    </select>
+  </div> -->
+
+  <div class="form-group">
+    <label for="command">Select the Game</label>
+    <select class="form-control" id="command" [(ngModel)]="SelectedCommand">
+        <option [value]="command.Id" *ngFor="let command of Commands">
+            {{command.Display}}
+          </option>
+    </select>
+  </div>
+
+
+  <div class="form-group">
+    <label for="mode">Search for a state:</label>
+    <input id="mode" type="text" class="form-control" [(ngModel)]="PlayerRequest.Mode" placeholder="Enter the Mode"/>
+  </div>
 </div>
-<div>
-  <label>Game:
-    <input [(ngModel)]="PlayerRequest.Game" placeholder="Enter the Game">
-  </label>
-</div>
-<div>
-  <label>Mode:
-    <input [(ngModel)]="PlayerRequest.Mode" placeholder="Enter the Mode">
-  </label>
-</div>
+
+
+<!-- <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div> -->
